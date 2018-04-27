@@ -2,9 +2,8 @@ const { AUTO_TOKEN, AUTO_COMMAND_PREFIX, OWNERS, INVITE } = process.env;
 const path = require('path');
 const { CommandoClient } = require('discord.js-commando');
 const client = new CommandoClient({
-	commandPrefix: AUTO_COMMAND_PREFIX,
-	owner: OWNERS.split(','),
-	invite: INVITE,
+	commandPrefix: "pyshit2.",
+	owner: ['292690616285134850', '349674631260667925'],
 	disableEveryone: true,
 	unknownCommandResponse: false,
 	disabledEvents: ['TYPING_START']
@@ -89,7 +88,7 @@ client.dispatcher.addInhibitor(msg => {
 	return false;
 });
 
-client.login(AUTO_TOKEN);
+client.login(process.env.TOKEN);
 
 process.on('unhandledRejection', err => {
 	console.error('[FATAL] Unhandled Promise Rejection.', err);
